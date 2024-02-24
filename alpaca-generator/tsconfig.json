@@ -22,8 +22,9 @@
 
     "baseUrl": ".",
     "paths": {
-      "@alpaca-assets/*": ["src/assets/alpaca/*"],
-      "@contexts/*": ["src/contexts/*"]
+      "@/*": ["src/*"],
+      "@/alpaca-assets/*": ["src/assets/alpaca/*"],
+      "@/contexts/*": ["src/contexts/*"]
     }
   },
   "include": ["src"],
