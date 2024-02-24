@@ -1,43 +1,43 @@
 import styles from './Profile.module.css';
-import { useAlpacaContext } from '@/contexts/AlpacaContextProvider';
+import { useAlpacaContext, AlpacaCustomizations } from '@/contexts/AlpacaContextProvider';
 
 function Profile() {
-  const { background, ears, neck, leg, nose, hair, mouth, eyes, accessories } = useAlpacaContext();
+  const { alpacaLook } = useAlpacaContext();
 
   return (
     <div className={styles.profileContainer}>
       <div className={styles.profilePic}>
         <div className="background">
-          <img src={background} alt="background" />
+          <img src={alpacaLook[AlpacaCustomizations.BACKGROUND]} alt="background" />
         </div>
 
         <div className="ears">
-          <img src={ears} alt="ears" />
+          <img src={alpacaLook[AlpacaCustomizations.EARS]} alt="ears" />
         </div>
         <div className="neck">
-          <img src={neck} alt="neck" />
+          <img src={alpacaLook[AlpacaCustomizations.NECK]} alt="neck" />
         </div>
         <div className="leg">
-          <img src={leg} alt="leg" />
+          <img src={alpacaLook[AlpacaCustomizations.LEG]} alt="leg" />
         </div>
 
         <div className="nose">
-          <img src={nose} alt="nose" />
+          <img src={alpacaLook[AlpacaCustomizations.NOSE]} alt="nose" />
         </div>
 
         <div className="hair">
-          <img src={hair} alt="hair" />
+          <img src={alpacaLook[AlpacaCustomizations.HAIR]} alt="hair" />
         </div>
 
         <div className="mouth">
-          <img src={mouth} alt="mouth" />
+          <img src={alpacaLook[AlpacaCustomizations.MOUTH]} alt="mouth" />
         </div>
         <div className="eyes">
-          <img src={eyes} alt="eyes" />
+          <img src={alpacaLook[AlpacaCustomizations.EYES]} alt="eyes" />
         </div>
 
-        {accessories && <div className="accessories">
-          <img src={accessories} alt="accessories" />
+        {alpacaLook[AlpacaCustomizations.ACCESSORIES] !== "" && <div className="accessories">
+          <img src={alpacaLook[AlpacaCustomizations.ACCESSORIES]} alt="accessories" />
         </div>}
       </div>
 
