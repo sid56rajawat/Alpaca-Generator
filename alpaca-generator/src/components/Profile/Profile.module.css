@@ -1,9 +1,38 @@
-.profile {
-  border: 1px solid red;
+.profileContainer {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
 }
-.profile > div {
-  position: absolute;
+.profilePic {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: calc(var(--general-size) + 2rem);
 }
-.profile > * > * {
-  width: 100%;
+.profilePic > div {
+  /* position: absolute; */
+  margin-bottom: calc(-1 * var(--general-size));
+  display: flex;
+  justify-content: center;
+  flex: none;
+}
+.profilePic img {
+  width: var(--general-size);
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  width: var(--general-size);
+  align-self: center;
+  gap: 2rem;
+}
+.actions > button {
+  flex: 1 1 auto;
+  background-color: var(--random-button);
+  padding: 1rem 0px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  font-weight: 600;
+  font-size: large;
 }

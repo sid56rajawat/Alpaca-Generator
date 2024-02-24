@@ -1,3 +1,12 @@
+:root {
+  --general-size: 70%;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  height: calc(100vh - 2rem);
+}
 .heading {
   color: var(--primary-dark);
   border: 1px solid black;
@@ -6,16 +15,26 @@
   padding: 1rem 2rem;
 }
 .sandbox {
+  flex: 1 1 auto;
   border: 1px solid var(--primary-dark);
-}
-.main {
   display: flex;
-  flex-direction: column;
-  margin: 1rem;
+}
+.sandbox > div {
+  width: 50%;
 }
 @media only screen and (max-width: 50em) {
   .heading {
     font-size: 2em;
     padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  .sandbox {
+    flex-direction: column;
+  }
+  .sandbox > div {
+    width: 100%;
+  }
+  :root {
+    --general-size: 100%;
   }
 }

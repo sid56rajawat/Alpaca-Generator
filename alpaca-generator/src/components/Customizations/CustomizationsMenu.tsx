@@ -1,6 +1,8 @@
+import styles from './CustomizationsMenu.module.css';
+
 function CustomizationsMenu() {
   return (
-    <div>This is Customizations menu</div>
+    <div className={styles.menu}>This is Customizations menu</div>
   )
 }
 
