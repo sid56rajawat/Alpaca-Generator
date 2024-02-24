@@ -1,0 +1,19 @@
+:root {
+  --primary-dark: #00225a;
+  --primary-light: #254f9d;
+  --button-active: #8a9dc0;
+  --button-inactive: #d2d6de;
+  --background: #eeecef;
+  --random-button: #fefcff;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  border: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--background);
+}

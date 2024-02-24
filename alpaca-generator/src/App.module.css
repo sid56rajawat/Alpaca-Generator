@@ -1,0 +1,21 @@
+.heading {
+  color: var(--primary-dark);
+  border: 1px solid black;
+  font-weight: 900;
+  font-size: 5em;
+  padding: 1rem 2rem;
+}
+.sandbox {
+  border: 1px solid var(--primary-dark);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+@media only screen and (max-width: 50em) {
+  .heading {
+    font-size: 2em;
+    padding: 0.5rem 1rem;
+  }
+}
