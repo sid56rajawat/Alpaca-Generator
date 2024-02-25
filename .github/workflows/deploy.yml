@@ -40,7 +40,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Copy Images
-        run: cp -r src/assets/alpaca dist/src/assets
+        run: mkdir -p dist/src/assets && cp -r src/assets/alpaca dist/src/assets
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
