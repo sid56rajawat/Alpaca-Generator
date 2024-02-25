@@ -17,7 +17,7 @@ const initialState: AlpacaState = {
         "Hair": baseURL + "hair/default.png",
         "Mouth": baseURL + "mouth/default.png",
         "Eyes": baseURL + "eyes/default.png",
-        "Accessories" : baseURL + "accessories/headphone.png"
+        "Accessories" : ""
     },
     choices: {
         "Background": ["Darkblue", "Blue", "Green", "Grey", "Red", "Yellow"], // TODO: color intensity
@@ -37,12 +37,9 @@ const alpacaSlice = createSlice({
     reducers: {
         updateLook: (state, action: PayloadAction<{key: string, val:string}>) => {
             let {key , val} = action.payload;
-            val = val.toLowerCase();
-            val = val.replace(' ','-');
-            const path = state.alpacaLook[key].split('/');
-            path.pop();
-            path.push(`${val}.png`);
-            state.alpacaLook[key] = path.join('/');
+            val = val.toLowerCase().replace(' ','-');
+            const path = baseURL + (key === "Background" ? "backgrounds" : key) + "/" + val + ".png";
+            state.alpacaLook[key] = path;
         }
     }
 });

@@ -25,7 +25,7 @@ function Profile() {
       <div className={styles.profilePic}>
         {Object.keys(alpacaLook).map(part => 
           (<div key={part} className={part}>
-            <img src={alpacaLook[part]} alt={part} />
+            {alpacaLook[part] !== "" && <img src={alpacaLook[part]} alt={part} />}
           </div>)
         )}
       </div>
