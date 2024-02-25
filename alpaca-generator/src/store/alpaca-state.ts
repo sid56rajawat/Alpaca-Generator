@@ -9,7 +9,7 @@ interface AlpacaState{
 const baseURL = "src/assets/alpaca/";
 const initialState: AlpacaState = {
     alpacaLook: {
-        "Background" : baseURL + "backgrounds/darkblue70.png",
+        "Background" : baseURL + "backgrounds/darkblue.png",
         "Ears": baseURL + "ears/default.png",
         "Neck": baseURL + "neck/default.png",
         "Leg": baseURL + "leg/default.png",
@@ -36,7 +36,13 @@ const alpacaSlice = createSlice({
     initialState,
     reducers: {
         updateLook: (state, action: PayloadAction<{key: string, val:string}>) => {
-            state.alpacaLook[action.payload.key] = action.payload.val;
+            let {key , val} = action.payload;
+            val = val.toLowerCase();
+            val = val.replace(' ','-');
+            const path = state.alpacaLook[key].split('/');
+            path.pop();
+            path.push(`${val}.png`);
+            state.alpacaLook[key] = path.join('/');
         }
     }
 });

@@ -3,6 +3,9 @@
   flex-direction: column;
   justify-content: center;
 }
+.wrapper {
+  margin-bottom: 15px;
+}
 .keys,
 .values {
   display: flex;
