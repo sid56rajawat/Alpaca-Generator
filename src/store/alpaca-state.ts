@@ -38,7 +38,7 @@ const alpacaSlice = createSlice({
         updateLook: (state, action: PayloadAction<{key: string, val:string}>) => {
             let {key , val} = action.payload;
             val = val.toLowerCase().replace(' ','-');
-            const path = baseURL + (key === "Background" ? "backgrounds" : key) + "/" + val + ".png";
+            const path = baseURL + (key === "Background" ? "backgrounds" : key.toLowerCase()) + "/" + val + ".png";
             state.alpacaLook[key] = path;
         }
     }
