@@ -2,12 +2,13 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
-import { AlpacaProvider } from '@/contexts/AlpacaContextProvider.tsx'
+import {store} from './store/store.ts'
+import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AlpacaProvider>
+    <Provider store={store}>
       <App />
-    </AlpacaProvider>
+    </Provider>
   </React.StrictMode>,
 )
