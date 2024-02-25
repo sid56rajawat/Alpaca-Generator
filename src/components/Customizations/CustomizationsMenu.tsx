@@ -8,7 +8,7 @@ function CustomizationsMenu() {
   const choices = useSelector((state: RootState) => state.alpaca.choices);
   const alpacaLook = useSelector((state: RootState) => state.alpaca.alpacaLook);
   const dispatch = useDispatch();
-  const [selectedKey, setSelectedKey] = useState("Hair");
+  const [selectedKey, setSelectedKey] = useState("Background");
 
   return (
     <div className={styles.menu}>
