@@ -17,22 +17,33 @@ function CustomizationsMenu() {
     path.pop();
     path.push(`${val}.png`);
     dispatch(updateLook({key,val: path.join('/')}));
-    console.log(key,"changed to",val);
   }
 
   return (
     <div className={styles.menu}>
-      <div className="keys">
-        {Object.keys(choices).map((item) => 
-          (<button key={item} onClick={() => setSelectedKey(item)}>{item}</button>)
-        )}
+      <div>
+        <div className={styles.title}>CUSTOMIZE THE ALPACA</div>
+        <div className={styles.keys}>
+          {Object.keys(choices).map((item) => 
+            (<button className={`cutomize-button ${selectedKey === item && "active-button"}`} key={item} onClick={() => setSelectedKey(item)}>{item}</button>)
+          )}
+        </div>
       </div>
 
-      <div className="values">
-        {
-          choices[selectedKey].map((item) => 
-          (<button key={item} onClick={() => changeAplacaLook(selectedKey,item)}>{item}</button>))
-        }
+      <div>
+        <div className={styles.title}>STYLE</div>
+        <div className={styles.values}>
+          {
+            choices[selectedKey].map((item) => 
+            (<button 
+              className={`cutomize-button ${alpacaLook[selectedKey].split('/').slice(-1)[0] == `${item.toLowerCase()}.png` && "active-button"}`} 
+              key={item} 
+              onClick={() => {changeAplacaLook(selectedKey,item);}}>
+                {item}
+            </button>)
+            )
+          }
+        </div>
       </div>
     </div>
   )

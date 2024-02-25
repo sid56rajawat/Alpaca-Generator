@@ -1,3 +1,17 @@
 .menu {
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.keys,
+.values {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 5px;
+}
+.title {
+  margin: 10px 0px;
+  font-weight: bolder;
+  color: var(--primary-dark);
 }

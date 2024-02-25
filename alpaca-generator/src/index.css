@@ -1,10 +1,11 @@
 :root {
   --primary-dark: #00225a;
   --primary-light: #254f9d;
-  --button-active: #8a9dc0;
-  --button-inactive: #d2d6de;
+  --button-active: #24509d;
+  --button-inactive: #8a9dc0;
   --background: #eeecef;
   --random-button: #fefcff;
+  --button-font: #dbe5f2;
 }
 *,
 *::before,
@@ -16,4 +17,26 @@ body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-color: var(--background);
+}
+.cutomize-button {
+  background-color: transparent;
+  color: var(--button-inactive);
+  border: 2px solid var(--button-inactive);
+  padding: 1em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.cutomize-button:hover {
+  border-color: var(--button-active);
+  color: var(--button-active);
+}
+.active-button {
+  border-color: var(--button-active);
+  background-color: var(--button-active);
+  color: var(--button-font);
+}
+.active-button:hover {
+  color: var(--button-font);
 }
