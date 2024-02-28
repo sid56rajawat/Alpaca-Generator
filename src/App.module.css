@@ -1,5 +1,5 @@
 :root {
-  --general-size: 70%;
+  --general-size: 100%;
 }
 .main {
   display: flex;
@@ -32,7 +32,10 @@
   .sandbox > div {
     width: 100%;
   }
+}
+
+@media only screen and (max-aspect-ratio: 8 / 3) {
   :root {
-    --general-size: 100%;
+    --general-size: 70%;
   }
 }

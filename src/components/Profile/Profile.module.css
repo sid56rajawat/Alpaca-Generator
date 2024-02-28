@@ -7,17 +7,21 @@
 .profilePic {
   display: flex;
   flex-direction: column;
-  margin-bottom: calc(var(--general-size) + 2rem);
+  width: var(--general-size);
+  aspect-ratio: 1/1;
+  align-self: center;
+  margin-bottom: 2em;
 }
-.profilePic > div {
+.profilePic > img {
   /* position: absolute; */
-  margin-bottom: calc(-1 * var(--general-size));
+  margin-bottom: calc(-1 * 100%);
   display: flex;
   justify-content: center;
   flex: none;
+  align-self: center;
 }
 .profilePic img {
-  width: var(--general-size);
+  width: 100%;
 }
 .actions {
   display: flex;

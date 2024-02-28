@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './Profile.module.css';
 import { RootState } from '@/store/store';
 import { updateLook } from '@/store/alpaca-state';
+import html2canvas from 'html2canvas';
 
 function Profile() {
   const alpacaLook = useSelector((state: RootState) => state.alpaca.alpacaLook);
@@ -20,19 +21,32 @@ function Profile() {
     }
   }
 
+  const download = async () => {
+    const alpaca = document.getElementById('alpaca')!;
+    const canvas = await html2canvas(alpaca, {scale: 2});
+
+    const imageURL = canvas.toDataURL("image/png", 1.0);
+    const tempLink = document.createElement("a");
+
+    tempLink.href = imageURL;
+    tempLink.download = 'alpaca.png';
+    document.body.appendChild(tempLink);
+    tempLink.click();
+    document.body.removeChild(tempLink);
+    tempLink.remove();
+  }
+
   return (
     <div className={styles.profileContainer}>
-      <div className={styles.profilePic}>
+      <div id="alpaca" className={styles.profilePic}>
         {Object.keys(alpacaLook).map(part => 
-          (<div key={part} className={part}>
-            {alpacaLook[part] !== "" && <img src={alpacaLook[part]} alt={part} />}
-          </div>)
+          (alpacaLook[part] !== "" && <img src={alpacaLook[part]} alt={part} key={part}/>)
         )}
       </div>
 
       <div className={styles.actions}>
         <button onClick={randomizeAlpaca}>🔀 Random</button>
-        <button>⬇️ Download</button>
+        <button onClick={download}>⬇️ Download</button>
       </div>
     </div>
   )
